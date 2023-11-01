@@ -5,11 +5,16 @@ import Reservation from "./Reservation";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import "../App.css";
-import { animations } from "react-animation";
+import { animated, useSpring } from "@react-spring/web";
 
 export default function NavbarComponent() {
   const [showNav, setShowNav] = useState(false);
   const [navbarBackground, setNavbarBackground] = useState("bg-transparent");
+
+  const springs = useSpring({
+    from: { x: 0 },
+    to: { x: 100 },
+  });
 
   const [open, setOpen] = useState(false);
 
@@ -164,7 +169,7 @@ export default function NavbarComponent() {
             id="element"
             className="items-stretch mobile-navbar flex-col h-screen left-0 shadow rounded right-0 font-semibold text-2xl md:flex"
             style={{
-              animation: animations.fadeInUp,
+              // ...springs,
               background: "rgba(14, 5, 41, 0.5)",
               fontFamily: "Josefin Sans",
             }}>

@@ -1,11 +1,16 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useRef, useState } from "react";
-import { animations } from "react-animation";
+import { animated, useSpring } from "@react-spring/web";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
 
   const cancelButtonRef = useRef(null);
+
+  const springs = useSpring({
+    from: { x: 0 },
+    to: { x: 100 },
+  });
 
   const handleModal = () => {
     setOpen(!open);
@@ -27,7 +32,8 @@ export default function Hero() {
           style={{ background: "rgba(14, 5, 41, 0.5)" }}></div>
         <div
           class="video-content space-y-2 flex flex-col justify-center align-middle items-center"
-          style={{ animation: animations.slideIn }}>
+          // style={{ ...springs }}
+        >
           <h1 class="font-light text-6xl" style={{ fontFamily: "Cabin" }}>
             Your Home Away From Home
           </h1>
