@@ -10,7 +10,7 @@ export default function Reservation({
   cancelButtonRef,
 }) {
   return (
-    <div>
+    <div className="z-10">
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
