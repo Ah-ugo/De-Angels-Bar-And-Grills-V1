@@ -1,6 +1,7 @@
 import React from "react";
 import ModalComponent1 from "./ModalComponent1";
 import { Transition, Dialog } from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Reservation({
   open,
@@ -41,11 +42,18 @@ export default function Reservation({
                   <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                     <div>
                       <div className="flex flex-col gap-2">
-                        <label
-                          className="font-bold text-xl"
-                          style={{ color: "#0e0529" }}>
-                          Reservation
-                        </label>
+                        <div className="flex flex-row justify-between">
+                          <label
+                            className="font-bold text-xl"
+                            style={{ color: "#0e0529" }}>
+                            Reservation
+                          </label>
+                          <XMarkIcon
+                            width={20}
+                            className="font-normal text-sm hover:text-gray"
+                            onClick={handleModal}
+                          />
+                        </div>
                         <label
                           className="font-semibold text-lg"
                           style={{ color: "#0e0529" }}>
