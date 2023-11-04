@@ -1,7 +1,6 @@
 import React from "react";
 import ModalComponent1 from "./ModalComponent1";
-import { Transition } from "@headlessui/react";
-import { Dialog } from "antd-mobile";
+import { Transition, Dialog } from "@headlessui/react";
 
 export default function Reservation({
   open,

@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useRef, useState } from "react";
 import { animated, useSpring } from "@react-spring/web";
+import Reservation from "./Reservation.js";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
@@ -83,7 +84,7 @@ export default function Hero() {
 
       {/* Modal Component */}
 
-      <Transition.Root show={open} as={Fragment}>
+      {/* <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
           className="relative z-10"
@@ -197,7 +198,13 @@ export default function Hero() {
             </div>
           </div>
         </Dialog>
-      </Transition.Root>
+      </Transition.Root> */}
+      <Reservation
+        open={open}
+        handleModal={handleModal}
+        Fragment={Fragment}
+        cancelButtonRef={cancelButtonRef}
+      />
     </div>
   );
 }
